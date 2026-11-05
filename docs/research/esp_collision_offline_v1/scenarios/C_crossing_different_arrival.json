@@ -1,0 +1,40 @@
+{
+  "name": "C_crossing_different_arrival",
+  "session_classification": "saved_official_ESP_simulator_lifecycle_test_short_preview",
+  "dt_s": 0.25,
+  "steps": 24,
+  "ego_body": {
+    "length_m": 0.4,
+    "width_m": 0.2,
+    "margin_m": 0.0
+  },
+  "lead_body": {
+    "length_m": 0.4,
+    "width_m": 0.2,
+    "margin_m": 0.0
+  },
+  "opponent": {
+    "path_xy": [
+      [
+        1.0962082632727608,
+        -1.0123971515193955
+      ],
+      [
+        1.0962082632727608,
+        19.987602848480606
+      ]
+    ],
+    "start_xy": [
+      1.0962082632727608,
+      -1.0123971515193955
+    ],
+    "speed_mps": 2.0,
+    "frame_id": "map",
+    "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+    "start_time_s": 0.20000000000000004,
+    "provenance": {
+      "kind": "assumed_reference_path",
+      "description": "Artificial vertical path, crossing source y in 0.5 s; ego reaches x+1 later"
+    }
+  }
+}

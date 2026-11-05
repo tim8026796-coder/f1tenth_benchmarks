@@ -1,0 +1,1165 @@
+{
+  "schema_version": 1,
+  "source": {
+    "session_directory": "/workspace/f1tenth_prediction_collision_integration/docs/research/esp_collision_offline_v1/sources/esp_short_preview",
+    "classification": "saved_official_ESP_simulator_lifecycle_test_short_preview",
+    "file_sha256": {
+      "metadata.json": "6a410f51315012750d8bae2dbdea3fe769293365f24da62ccd0aa2801d9826ed",
+      "states.jsonl": "e0473f5d5bca712f4eefa2e6222eb8c69f61646bbcd5f96e034b18608966cc1e",
+      "plans.jsonl": "4bf33957522864653407c389c87d9286550d0b054be99c19c26df7e41e52f495",
+      "summary.json": "35aac128d7e66aea4c1a2222e0848f59c3214f8856646889186e986efb3d528f"
+    },
+    "recorded_program": {
+      "commit": "321c9a623a7b4fa5a13723ea6614a1808ffac98f",
+      "branch": "prediction-collision-integration-v1",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "code_sha256": {
+        "f1tenth_benchmarks/research/__init__.py": "1aea7cebe84c910e8ad6f07269c8d27bdfe938ed72b587e9051679d3efa52cef",
+        "f1tenth_benchmarks/research/closed_velocity_profile.py": "68ae0a8314e08e75e377858a8156a5a56ac3d141a1f6ec083617fd9ff732b721",
+        "f1tenth_benchmarks/research/continuous_logging.py": "5c5b122bebf4c2a2f86ffb734317e0228ef601b59b0e551ce5581b345d596435",
+        "f1tenth_benchmarks/research/continuous_sim.py": "3d9e53bc905684b85b92178a0ff35f76772443c5dbed7ffd5b9b86c93d768a3b",
+        "f1tenth_benchmarks/research/core/__init__.py": "60ee34b4b45968e80338632c684cb9632bf214b5eccd0baf740762f0d72609ae",
+        "f1tenth_benchmarks/research/core/centreline_control.py": "1cc020b92b77942a69f173c4e3185b8db1beb8fe870ea340c7014d60ec043935",
+        "f1tenth_benchmarks/research/core/continuous_sim.py": "f1c97e3bf2dd693b973609394fe6cb019fdffaeb0c4d6fc5413835aed57ec52b",
+        "f1tenth_benchmarks/research/core/frenet_lap_tracking.py": "2a27420c3b4c97a8176ae674f3d09ab2e39959f519a75021b417fa9d94925daa",
+        "f1tenth_benchmarks/research/core/geometry/__init__.py": "861396f431e6dee311c1c9852d4f8e951b31d24278881724f2a43e2b9148f746",
+        "f1tenth_benchmarks/research/core/geometry/build_external_map.py": "7dda7bdcae911073d27bfaf7ec127c5cac1f75b83dfef3d82edca7aefecfc5dd",
+        "f1tenth_benchmarks/research/core/geometry/build_map.py": "8d6ee6733e8471dbb9d7dcfed100aa71aff358d1a2138d56e91da4050735f863",
+        "f1tenth_benchmarks/research/core/geometry/build_open_map.py": "5b884c199c4e255b061bdbbd3c4dddf2f09263512f81e58a0da14cf227ef1345",
+        "f1tenth_benchmarks/research/core/geometry/check_frenet.py": "6bdee5ad0dbbe39efc9a10e01f4bde6120bd16c0b01e86ee030861348a7407ce",
+        "f1tenth_benchmarks/research/core/geometry/complete_stage_c.py": "1f171a32ea554b970801657749f2a41291158d1818021a4ca93fe48b7b3fea8e",
+        "f1tenth_benchmarks/research/core/geometry/complete_stage_d.py": "17ac8e4a6ddf15041c78e82809cd259c790c008171080809459550a1d65d04f0",
+        "f1tenth_benchmarks/research/core/geometry/domain.py": "8174737fb14b7c27558f6f7835f93fc63c1b63649cbc0d44dfc8d1b034441ff7",
+        "f1tenth_benchmarks/research/core/geometry/extraction.py": "289ab022c722737da5c292f6b4ee5d7208d05c2875538c7c0d4e90de4778bb63",
+        "f1tenth_benchmarks/research/core/geometry/frenet.py": "d90ff796b3cf68de94bd2098d9c7d067bf1d70ca89a381b716e0429b387ca9be",
+        "f1tenth_benchmarks/research/core/geometry/map_raster.py": "5371bd44e9e83093859f1617998949ea0c3211f5760f28742112e3678f91a621",
+        "f1tenth_benchmarks/research/core/geometry/publish_tracks.py": "0914aff96514f2d41727d7c7f9513351f7cf3119fb1316e83957de86189c75bc",
+        "f1tenth_benchmarks/research/core/geometry/section_ranges.py": "1c68193aac61a19dda27a34f78588ece9dab03e199bc514529c3919b73da3a24",
+        "f1tenth_benchmarks/research/core/geometry/tracker.py": "2fb98f763be17ae305a0ee7b0d3c6aa9c60963a465fdf1aab844a13d6fbaf2a8",
+        "f1tenth_benchmarks/research/core/geometry/validate_stage_d.py": "325f28e9b6ccac1cae986f7b10447754a82520a272c98fa68c9571f21b25326b",
+        "f1tenth_benchmarks/research/core/geometry/viewer.py": "86e5d65b54b0907ae22fb09b4a4a6e60b22a75e1b85f089b91fbb2ada6894edc",
+        "f1tenth_benchmarks/research/core/lap_tracking.py": "fda05066f65f59b90e0800d4273b6ac56c8a4ef484c2d5b38bd6233f3b61768f",
+        "f1tenth_benchmarks/research/core/logging.py": "c57fd9e47db6eef8a324338a0ea9d2630044e4b426253ba0b67e736666021758",
+        "f1tenth_benchmarks/research/lap_tracking.py": "26612e49e748b5f12787fc1efa61de422a828aae9429b8871a896e7470253279",
+        "f1tenth_benchmarks/research/lmpc/__init__.py": "841cbe2cbb36f49c465c5c7d9013c99863df988efcc5b8167908be50b8ff56d5",
+        "f1tenth_benchmarks/research/overtaking/__init__.py": "5e4b6bdf9a4a1dd42ed1c9ab6ed5eb1534379a402f5adf74e1d9d26ca808a296",
+        "f1tenth_benchmarks/research/overtaking/adaptive_candidate_paths.py": "18bcf6f73887f31ffbf2dc3ffe1ee806db21b25a6eaf13ff6db3c7751841e245",
+        "f1tenth_benchmarks/research/overtaking/candidate_paths.py": "509dce832d708e4232d1f7ec02dd73ec90dd13ba096d935d229c0db2cbfda51c",
+        "f1tenth_benchmarks/research/overtaking/candidate_targets.py": "278eea6bf3e64fb5e64817e565ed63a176030c218f852742f13eff6c54fcb384",
+        "f1tenth_benchmarks/research/overtaking/candidate_validation.py": "09b6571257c93f5cd824c0e2f962cf90ecc88ab7edb49fcbf54f80ac37179eb9",
+        "f1tenth_benchmarks/research/overtaking/candidate_visualization.py": "0e45f7f00f30235c9cf43367597b9be4a1a374c6998a130aac61e9b064b319e1",
+        "f1tenth_benchmarks/research/overtaking/collision_v1.py": "53745d0d2b8a73d317419c98416d49c78b98d209ebe68424be2485e301e9fed5",
+        "f1tenth_benchmarks/research/overtaking/constrained_adaptive_paths.py": "99b6b6a94eb4a6737a438503492a8cc3b1a5d6ed55b77e81d1076848f889ec0c",
+        "f1tenth_benchmarks/research/overtaking/playback.py": "7a406cd2cf46ed9e1503d846dd2b7872016639c539a37aebe45b9a5fd85ffb44",
+        "f1tenth_benchmarks/research/overtaking/prediction_collision_adapter_v1.py": "21050802c682deb38c992d212db815ed395e2631d71ec30bd12ef9de7d938d36",
+        "f1tenth_benchmarks/research/overtaking/prediction_v1.py": "93e29c8a3c016d14a139276920826a9d3271110d71395433f9323855bc8f8171",
+        "f1tenth_benchmarks/research/overtaking/robust_adaptive_paths.py": "cdb998db3f296c0c8739ecfb057e6dc918408c3ddf49c9b172669c0174b9b462",
+        "f1tenth_benchmarks/research/overtaking/session.py": "e91d29971e914b45f24141a48d20d746d06e96765e736a03db0f41baad6ef3ed",
+        "f1tenth_benchmarks/research/overtaking/track_data.py": "99098965822452198e1950b2a9cadd83e659dc890a24f1e4e7bffc4747c73eea",
+        "f1tenth_benchmarks/research/overtaking/verify_session.py": "e77a8c01aa45bf4584ba9ef8c0e271cd321d29b7254e0ac7987f5daa491719bb",
+        "f1tenth_benchmarks/research/plot_continuous_report.py": "876f76cf6009320409b4943bc104bf9e99f84acc16d5f50947a57a03f4a46777",
+        "f1tenth_benchmarks/research/run_centerline_candidates.py": "458ecd024817164f17c86b9a675d4349db2656c9926fda7264c7a627ae348855",
+        "f1tenth_benchmarks/research/run_continuous_pp.py": "d64b5e7d3973dbed19162b49af8d89f4331fc612b6cd64d2a78c90b82508a4d5",
+        "f1tenth_benchmarks/simulator/__init__.py": "e8fbbd6797f2b3176311e4a89ee9a49290336d2048ab35e68b23cc6f0aa76a84",
+        "f1tenth_benchmarks/simulator/dynamic_models.py": "5325b1ce8ebdb93d964f635a7353efa545e4eb55a2c8f8a0285c7676e1c6fcc0",
+        "f1tenth_benchmarks/simulator/dynamics_simulator.py": "e530f409ebf9f4dcd7189af2ee402c2dc84c9a7a9f71b6b40433e9a881b2ad02",
+        "f1tenth_benchmarks/simulator/f1tenth_sim.py": "486c07d07721b4d5462b0f1c4d951da0b449de2474059cd0851d6d7c7ca44467",
+        "f1tenth_benchmarks/simulator/laser_models.py": "04b3eb73706072d19d8763cf863a1c9f9fa0e78d4c5e9d223abc2601e8f69f0f",
+        "f1tenth_benchmarks/simulator/utils.py": "8c2deab9f35b2950526547c3c971925cff9dfaded54d14d52dc6e475ad0adee3",
+        "f1tenth_benchmarks/classic_racing/GlobalPurePursuit.py": "cf7ce3ab5c3ce3815214d4a5a8b4a1126b69bff47c3e8c6e4d66c03f43b56d76",
+        "f1tenth_benchmarks/utils/BasePlanner.py": "8f290ce0d51a7bb389b1404abfb59a12a1e0bea24fadc839a3cdabf32ebd267b"
+      }
+    },
+    "track_provenance": {
+      "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+      "frame_id": "map",
+      "data_mode": "csv_samples_with_same_version_json",
+      "reference_method": "reference_curve.json",
+      "boundary_method": "exact_grid_ray",
+      "manifest_sha256": "50c054f579a909f3e05d2e47714f77a01acd3ddd4bb7f2449d4fa2502f05c77e",
+      "file_hashes": {
+        "boundaries.csv": "8f1af5d5bfcf2f604760c56b388b0250e1fd2e0a2a7e3107344282960ed3d0c9",
+        "centerline.csv": "7ba098a3155be840d38c89e02c44a697cdd3f7a27ad775b0fa27a5ac3ded3188",
+        "reference_curve.json": "6b103d224deb5b8d90d971cf11ebeb801d116961321872eaac9266d4d4a4d6df",
+        "validity.json": "79ace2b90d330f4857aa42137de166d6bcc271e48aba871e6e6e3ea321931c46",
+        "waypoints_ros.csv": "48ee48e58ce6734f0e2c6097d64545314b16e80f9b7da8b64b271d5bd25285d1"
+      },
+      "source_hashes": {
+        "yaml": "b08b397c40df0ca57075dbf5df82366dc483d8a9279dfe13ebbbd605ede516c1",
+        "image": "0b43f364d034535de135730f8f111addd217f5362cd2727edd12f3f8d233289e"
+      },
+      "inspection_only": true,
+      "planning_allowed": false,
+      "footprint_verified": false
+    },
+    "plan_id": 1,
+    "source_control_step": 1,
+    "source_sim_time_s": 0.20000000000000004,
+    "source_pose": [
+      0.09620826327276076,
+      -0.012397151519395527,
+      0.005697930378543061
+    ],
+    "ego_speed_mps": 0.43332550367594974,
+    "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+    "frame_id": "map"
+  },
+  "scenario": {
+    "name": "A_far_centerline",
+    "session_classification": "saved_official_ESP_simulator_lifecycle_test_short_preview",
+    "dt_s": 0.25,
+    "steps": 24,
+    "ego_body": {
+      "length_m": 0.4,
+      "width_m": 0.2,
+      "margin_m": 0.0
+    },
+    "lead_body": {
+      "length_m": 0.4,
+      "width_m": 0.2,
+      "margin_m": 0.0
+    },
+    "opponent": {
+      "path_xy": [
+        [
+          10.07504588447772,
+          0.03054762925278494
+        ],
+        [
+          10.125036854068656,
+          0.030626233453220308
+        ],
+        [
+          10.17502782754957,
+          0.030702323299035335
+        ],
+        [
+          10.225018804881149,
+          0.030775839570671138
+        ],
+        [
+          10.275009786014927,
+          0.030846723049033856
+        ],
+        [
+          10.325000770893004,
+          0.03091491451571934
+        ],
+        [
+          10.374991759447983,
+          0.03098035475323861
+        ],
+        [
+          10.424982751602709,
+          0.03104298454524308
+        ],
+        [
+          10.474973747269921,
+          0.031102744676750105
+        ],
+        [
+          10.524964746352307,
+          0.031159575934369188
+        ],
+        [
+          10.574955748742008,
+          0.031213419106527803
+        ],
+        [
+          10.624946754320645,
+          0.03126421498369812
+        ],
+        [
+          10.674937762959,
+          0.03131190435862355
+        ],
+        [
+          10.724928774516732,
+          0.03135642802654566
+        ],
+        [
+          10.774919788842343,
+          0.03139772678543162
+        ],
+        [
+          10.82491080577286,
+          0.03143574143620152
+        ],
+        [
+          10.874901825133568,
+          0.031470412782956245
+        ],
+        [
+          10.924892846737963,
+          0.03150168163320556
+        ],
+        [
+          10.974883870387433,
+          0.03152948879809648
+        ],
+        [
+          11.024874895870997,
+          0.031553775092641796
+        ],
+        [
+          11.074865922965255,
+          0.031574481335949235
+        ],
+        [
+          11.124856951434086,
+          0.03159154835145044
+        ],
+        [
+          11.174847981028359,
+          0.03160491696713066
+        ],
+        [
+          11.224839011485889,
+          0.031614528015758495
+        ],
+        [
+          11.274830042531153,
+          0.03162032233511602
+        ],
+        [
+          11.324821073875004,
+          0.031622240768229226
+        ],
+        [
+          11.3748121052146,
+          0.03162022416359874
+        ],
+        [
+          11.424803136233152,
+          0.03161421337543084
+        ],
+        [
+          11.474794166599583,
+          0.03160414926386881
+        ],
+        [
+          11.524785195968542,
+          0.031589972695224594
+        ],
+        [
+          11.57477622398008,
+          0.03157162454221078
+        ],
+        [
+          11.624767250259364,
+          0.03154904568417292
+        ],
+        [
+          11.67475827441663,
+          0.03152217700732203
+        ],
+        [
+          11.724749296046916,
+          0.031490959404967656
+        ],
+        [
+          11.774740314729742,
+          0.0314553337777511
+        ],
+        [
+          11.824731330029094,
+          0.03141524103387898
+        ],
+        [
+          11.874722341493115,
+          0.031370622089357106
+        ],
+        [
+          11.924713348653835,
+          0.03132141786822494
+        ],
+        [
+          11.974704351027107,
+          0.03126756930278994
+        ],
+        [
+          12.024695348112346,
+          0.0312090173338626
+        ],
+        [
+          12.074686339392212,
+          0.031145702910991835
+        ],
+        [
+          12.12467732433258,
+          0.031077566992700374
+        ],
+        [
+          12.17466830238228,
+          0.03100455054672087
+        ],
+        [
+          12.22465927297276,
+          0.03092659455023226
+        ],
+        [
+          12.274650235518074,
+          0.030843639990096264
+        ],
+        [
+          12.324641189414603,
+          0.030755627863094465
+        ],
+        [
+          12.374632134040745,
+          0.030662499176165873
+        ],
+        [
+          12.424623068756892,
+          0.030564194946644318
+        ],
+        [
+          12.474613992905129,
+          0.03046065620249674
+        ],
+        [
+          12.524604905808971,
+          0.03035182398256178
+        ],
+        [
+          12.574595806773308,
+          0.030237639336788247
+        ],
+        [
+          12.624586695084114,
+          0.030118043326474553
+        ],
+        [
+          12.674577570008168,
+          0.02999297702450835
+        ],
+        [
+          12.72456843079306,
+          0.029862381515606107
+        ],
+        [
+          12.77455927666673,
+          0.029726197896553883
+        ],
+        [
+          12.824550106837505,
+          0.029584367276447598
+        ],
+        [
+          12.874540920493775,
+          0.029436830776934198
+        ],
+        [
+          12.924531716803738,
+          0.029283529532453424
+        ],
+        [
+          12.974522494915334,
+          0.02912440469047911
+        ],
+        [
+          13.024513253955995,
+          0.028959397411761678
+        ],
+        [
+          13.074503993032334,
+          0.028788448870570943
+        ],
+        [
+          13.124494711230126,
+          0.02861150025493857
+        ],
+        [
+          13.174485407614016,
+          0.028428492766901802
+        ],
+        [
+          13.224476081227245,
+          0.02823936762274743
+        ],
+        [
+          13.274466731091604,
+          0.02804406605325542
+        ],
+        [
+          13.32445735620716,
+          0.02784252930394372
+        ],
+        [
+          13.374447955551984,
+          0.027634698635313627
+        ],
+        [
+          13.42443852808183,
+          0.027420515323095602
+        ],
+        [
+          13.474429072730926,
+          0.027199920658490792
+        ],
+        [
+          13.524419588410108,
+          0.0269728559484244
+        ],
+        [
+          13.574410074007845,
+          0.02673926251578702
+        ],
+        [
+          13.624400528389696,
+          0.02649908169968309
+        ],
+        [
+          13.674390950398008,
+          0.026252254855678718
+        ],
+        [
+          13.724381338851924,
+          0.025998723356048713
+        ],
+        [
+          13.774371692547074,
+          0.025738428590025175
+        ],
+        [
+          13.82436201025531,
+          0.025471311964046575
+        ],
+        [
+          13.874352290724666,
+          0.025197314902006038
+        ],
+        [
+          13.924342532679097,
+          0.024916378845501082
+        ],
+        [
+          13.974332734818177,
+          0.024628445254084218
+        ],
+        [
+          14.024322895817097,
+          0.024333455605512117
+        ],
+        [
+          14.07431301432636,
+          0.024031351395997
+        ],
+        [
+          14.12430308897154,
+          0.02372207414045825
+        ],
+        [
+          14.174293118353214,
+          0.02340556537277301
+        ],
+        [
+          14.224283101046721,
+          0.02308176664602872
+        ],
+        [
+          14.274273035601869,
+          0.022750619532776184
+        ],
+        [
+          14.324262920542932,
+          0.022412065625281148
+        ],
+        [
+          14.374252754368253,
+          0.022066046535779073
+        ],
+        [
+          14.42424253555024,
+          0.021712503896727728
+        ],
+        [
+          14.474232262535088,
+          0.02135137936106181
+        ],
+        [
+          14.5242219337425,
+          0.02098261460244827
+        ],
+        [
+          14.574211547565692,
+          0.020606151315540236
+        ],
+        [
+          14.624201102371071,
+          0.020221931216233037
+        ],
+        [
+          14.674190596498022,
+          0.019829896041920904
+        ],
+        [
+          14.724180028258843,
+          0.019429987551752025
+        ],
+        [
+          14.77416939593848,
+          0.01902214752688613
+        ],
+        [
+          14.824158697794275,
+          0.018606317770752438
+        ],
+        [
+          14.874147932055921,
+          0.018182440109305996
+        ],
+        [
+          14.924137096925218,
+          0.01775045639128666
+        ],
+        [
+          14.974126190575767,
+          0.01731030848847838
+        ],
+        [
+          15.024115211152997,
+          0.01686193829596693
+        ],
+        [
+          15.074104156773863,
+          0.01640528773240015
+        ],
+        [
+          15.12409302552658,
+          0.015940298740248698
+        ],
+        [
+          15.174081815470629,
+          0.01546691328606497
+        ],
+        [
+          15.224070524636454,
+          0.014985073360744948
+        ],
+        [
+          15.27405915102523,
+          0.014494720979790057
+        ],
+        [
+          15.324047692608831,
+          0.013995798183567715
+        ],
+        [
+          15.374036147329544,
+          0.01348824703757426
+        ],
+        [
+          15.424024513099852,
+          0.012972009632698523
+        ],
+        [
+          15.474012787802373,
+          0.012447028085483374
+        ],
+        [
+          15.524000969289624,
+          0.011913244538390294
+        ],
+        [
+          15.573989055383748,
+          0.011370601160064338
+        ],
+        [
+          15.62397704387649,
+          0.010819040145596948
+        ],
+        [
+          15.673964932528964,
+          0.010258503716791795
+        ],
+        [
+          15.723952719071349,
+          0.009688934122431488
+        ],
+        [
+          15.773940401202918,
+          0.009110273638541447
+        ],
+        [
+          15.82392797659175,
+          0.00852246456865734
+        ],
+        [
+          15.873915442874496,
+          0.007925449244093021
+        ],
+        [
+          15.92390279765632,
+          0.0073191700242059045
+        ],
+        [
+          15.973890038510703,
+          0.006703569296665775
+        ],
+        [
+          16.02387716297914,
+          0.006078589477724151
+        ],
+        [
+          16.07386416857115,
+          0.005444173012481016
+        ],
+        [
+          16.123851052764,
+          0.004800262375155007
+        ],
+        [
+          16.17383781300247,
+          0.004146800069354355
+        ],
+        [
+          16.22382444669885,
+          0.0034837286283446664
+        ],
+        [
+          16.273810951232647,
+          0.0028109906153209324
+        ],
+        [
+          16.32379732395038,
+          0.0021285286236795015
+        ],
+        [
+          16.373783562165535,
+          0.0014362852772876016
+        ],
+        [
+          16.423769663158325,
+          0.0007342032307563993
+        ],
+        [
+          16.473755624175435,
+          2.222516971485053e-05
+        ],
+        [
+          16.523741442430033,
+          -0.0006997061889199262
+        ],
+        [
+          16.573727115101505,
+          -0.0014316480966677717
+        ],
+        [
+          16.623712639335196,
+          -0.002173657773210408
+        ],
+        [
+          16.67369801224242,
+          -0.0029257924061195373
+        ],
+        [
+          16.72368323090021,
+          -0.003688109150580758
+        ],
+        [
+          16.77366829235107,
+          -0.004460665129116796
+        ],
+        [
+          16.823653193602983,
+          -0.005243517431314876
+        ],
+        [
+          16.873637931629048,
+          -0.006036723113546923
+        ],
+        [
+          16.92362250336752,
+          -0.00684033919869587
+        ],
+        [
+          16.97360690572151,
+          -0.007654422675877112
+        ],
+        [
+          17.0235911355588,
+          -0.008479030500159475
+        ],
+        [
+          17.073575189711807,
+          -0.009314219592289858
+        ],
+        [
+          17.123559064978842,
+          -0.010160046750696594
+        ],
+        [
+          17.173542760638938,
+          -0.01101642228107387
+        ],
+        [
+          17.223526283748033,
+          -0.011882811065513643
+        ],
+        [
+          17.27350964315196,
+          -0.012758593912244884
+        ],
+        [
+          17.32349284803966,
+          -0.013643151966701248
+        ],
+        [
+          17.373475907920817,
+          -0.014535866678086137
+        ],
+        [
+          17.423458832603128,
+          -0.015436119765887565
+        ],
+        [
+          17.47344163216972,
+          -0.016343293186348615
+        ],
+        [
+          17.523424316956916,
+          -0.017256769098899873
+        ],
+        [
+          17.57340689753168,
+          -0.018175929832543992
+        ],
+        [
+          17.623389384669217,
+          -0.019100157852199158
+        ],
+        [
+          17.67337178933078,
+          -0.020028835725006452
+        ],
+        [
+          17.723354122641314,
+          -0.02096134608659266
+        ],
+        [
+          17.773336395867098,
+          -0.021897071607293962
+        ],
+        [
+          17.823318620393632,
+          -0.022835394958346012
+        ],
+        [
+          17.87330080770334,
+          -0.023775698778031876
+        ],
+        [
+          17.923282969353238,
+          -0.02471736563779292
+        ],
+        [
+          17.973265116952856,
+          -0.02565977800830882
+        ],
+        [
+          18.023247262141822,
+          -0.02660231822553485
+        ],
+        [
+          18.073229416567756,
+          -0.027544368456711675
+        ],
+        [
+          18.123211591863903,
+          -0.028485310666336167
+        ],
+        [
+          18.17319379962678,
+          -0.02942452658209947
+        ],
+        [
+          18.223176051393963,
+          -0.030361397660796416
+        ],
+        [
+          18.273158358621647,
+          -0.031295305054198995
+        ],
+        [
+          18.32314073266213,
+          -0.03222562957489829
+        ],
+        [
+          18.37312318474151,
+          -0.033151751662121504
+        ],
+        [
+          18.423105725937077,
+          -0.03407305134751359
+        ],
+        [
+          18.47308836716648,
+          -0.0349889082211077
+        ],
+        [
+          18.52307111911778,
+          -0.035898701396186686
+        ],
+        [
+          18.573053992297833,
+          -0.03680180947628624
+        ],
+        [
+          18.623036996961865,
+          -0.03769761051999524
+        ],
+        [
+          18.67302014310401,
+          -0.03858548200684894
+        ],
+        [
+          18.723003440431025,
+          -0.03946480080289451
+        ],
+        [
+          18.772986898340665,
+          -0.04033494312631791
+        ],
+        [
+          18.822970525899546,
+          -0.04119528451304013
+        ],
+        [
+          18.87295433181904,
+          -0.042045199782258784
+        ],
+        [
+          18.922938324431723,
+          -0.04288406300198231
+        ],
+        [
+          18.972922511667953,
+          -0.04371124745454876
+        ],
+        [
+          19.022906901032073,
+          -0.04452612560212246
+        ],
+        [
+          19.072891499578457,
+          -0.04532806905217365
+        ],
+        [
+          19.122876313887673,
+          -0.04611644852294721
+        ],
+        [
+          19.172861350042215,
+          -0.04689063380891282
+        ],
+        [
+          19.222846613602083,
+          -0.04764999374620297
+        ],
+        [
+          19.272832109580467,
+          -0.04839389617804374
+        ],
+        [
+          19.322817842418996,
+          -0.04912170792017256
+        ],
+        [
+          19.372803815962772,
+          -0.04983279472624791
+        ],
+        [
+          19.422790033435483,
+          -0.050526521253257274
+        ],
+        [
+          19.472776497414145,
+          -0.051202251026917715
+        ],
+        [
+          19.52276320980346,
+          -0.05185934640707384
+        ],
+        [
+          19.572750171810444,
+          -0.05249716855310033
+        ],
+        [
+          19.622737383918377,
+          -0.05311507738930248
+        ],
+        [
+          19.672724845860685,
+          -0.0537124315703225
+        ],
+        [
+          19.72271255659475,
+          -0.054288588446555194
+        ],
+        [
+          19.77270051427527,
+          -0.05484290402957087
+        ],
+        [
+          19.822688716227347,
+          -0.05537473295755028
+        ],
+        [
+          19.872677158919636,
+          -0.055883428460737954
+        ],
+        [
+          19.922665837936865,
+          -0.05636834232691021
+        ],
+        [
+          19.972654747952223,
+          -0.05682882486686498
+        ],
+        [
+          20.022643882699676,
+          -0.057264224879938576
+        ],
+        [
+          20.07263323494562,
+          -0.05767388961954691
+        ],
+        [
+          20.07442691784112,
+          -0.057687641971850896
+        ]
+      ],
+      "start_xy": [
+        10.07504588447772,
+        0.03054762925278494
+      ],
+      "speed_mps": 1.0,
+      "frame_id": "map",
+      "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+      "start_time_s": 0.20000000000000004,
+      "provenance": {
+        "kind": "assumed_reference_path",
+        "description": "ESP centerline.csv start index 200, explicit 10 m finite prefix; synthetic opponent"
+      }
+    }
+  },
+  "timing": {
+    "dt_s": 0.25,
+    "steps": 24,
+    "requested_horizon_s": 6.0
+  },
+  "result": {
+    "schema_version": 1,
+    "method": "offline_prediction_collision_adapter_v1",
+    "batch_status": "evaluated",
+    "reason": null,
+    "plan_id": 1,
+    "expected_candidate_count": 5,
+    "received_candidate_count": 5,
+    "source_sim_time_s": 0.20000000000000004,
+    "source_control_step": 1,
+    "source_pose": [
+      0.09620826327276076,
+      -0.012397151519395527,
+      0.005697930378543061
+    ],
+    "ego_speed_mps": 0.43332550367594974,
+    "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+    "frame_id": "map",
+    "dt_s": 0.25,
+    "steps": 24,
+    "opponent_start_time_s": 0.20000000000000004,
+    "opponent_provenance": {
+      "kind": "assumed_reference_path",
+      "description": "ESP centerline.csv start index 200, explicit 10 m finite prefix; synthetic opponent"
+    },
+    "ego_body": {
+      "length_m": 0.4,
+      "width_m": 0.2,
+      "margin_m": 0.0
+    },
+    "lead_body": {
+      "length_m": 0.4,
+      "width_m": 0.2,
+      "margin_m": 0.0
+    },
+    "inspection_only": true,
+    "planning_allowed": false,
+    "continuous_sweep_checked": false,
+    "limitations": [
+      "Discrete timestamps only; no continuous or dynamic safety claim.",
+      "External opponent trajectory and time origins are caller assertions.",
+      "XY must refer to each vehicle bounding-circle center."
+    ]
+  },
+  "paths": [
+    {
+      "input_index": 0,
+      "candidate_id": 1,
+      "native_sampled_valid": true,
+      "native_reason": null,
+      "prediction_status": "complete",
+      "prediction_reason": null,
+      "prediction_complete": true,
+      "collision_status": "complete",
+      "collision_reason": null,
+      "collision_assessment": "no_contact_at_samples",
+      "evaluation_complete": true,
+      "checked_range_s": [
+        0.0,
+        6.0
+      ],
+      "unchecked_range_s": null,
+      "current_contact": false,
+      "any_contact_in_checked_samples": false,
+      "first_contact_grid_t_s": null,
+      "first_future_contact_grid_t_s": null,
+      "minimum_center_distance_m": 9.978930029044749,
+      "minimum_center_distance_t_s": 0.0,
+      "minimum_clearance_m": 9.53171643354479,
+      "minimum_clearance_t_s": 0.0,
+      "source_sim_time_s": 0.20000000000000004,
+      "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+      "frame_id": "map",
+      "outcome": "no_contact_at_samples",
+      "reason": null,
+      "inspection_only": true,
+      "planning_allowed": false
+    },
+    {
+      "input_index": 1,
+      "candidate_id": 2,
+      "native_sampled_valid": true,
+      "native_reason": null,
+      "prediction_status": "complete",
+      "prediction_reason": null,
+      "prediction_complete": true,
+      "collision_status": "complete",
+      "collision_reason": null,
+      "collision_assessment": "no_contact_at_samples",
+      "evaluation_complete": true,
+      "checked_range_s": [
+        0.0,
+        6.0
+      ],
+      "unchecked_range_s": null,
+      "current_contact": false,
+      "any_contact_in_checked_samples": false,
+      "first_contact_grid_t_s": null,
+      "first_future_contact_grid_t_s": null,
+      "minimum_center_distance_m": 9.978930029044749,
+      "minimum_center_distance_t_s": 0.0,
+      "minimum_clearance_m": 9.53171643354479,
+      "minimum_clearance_t_s": 0.0,
+      "source_sim_time_s": 0.20000000000000004,
+      "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+      "frame_id": "map",
+      "outcome": "no_contact_at_samples",
+      "reason": null,
+      "inspection_only": true,
+      "planning_allowed": false
+    },
+    {
+      "input_index": 2,
+      "candidate_id": 3,
+      "native_sampled_valid": true,
+      "native_reason": null,
+      "prediction_status": "complete",
+      "prediction_reason": null,
+      "prediction_complete": true,
+      "collision_status": "complete",
+      "collision_reason": null,
+      "collision_assessment": "no_contact_at_samples",
+      "evaluation_complete": true,
+      "checked_range_s": [
+        0.0,
+        6.0
+      ],
+      "unchecked_range_s": null,
+      "current_contact": false,
+      "any_contact_in_checked_samples": false,
+      "first_contact_grid_t_s": null,
+      "first_future_contact_grid_t_s": null,
+      "minimum_center_distance_m": 9.978930029044749,
+      "minimum_center_distance_t_s": 0.0,
+      "minimum_clearance_m": 9.53171643354479,
+      "minimum_clearance_t_s": 0.0,
+      "source_sim_time_s": 0.20000000000000004,
+      "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+      "frame_id": "map",
+      "outcome": "no_contact_at_samples",
+      "reason": null,
+      "inspection_only": true,
+      "planning_allowed": false
+    },
+    {
+      "input_index": 3,
+      "candidate_id": 4,
+      "native_sampled_valid": true,
+      "native_reason": null,
+      "prediction_status": "complete",
+      "prediction_reason": null,
+      "prediction_complete": true,
+      "collision_status": "complete",
+      "collision_reason": null,
+      "collision_assessment": "no_contact_at_samples",
+      "evaluation_complete": true,
+      "checked_range_s": [
+        0.0,
+        6.0
+      ],
+      "unchecked_range_s": null,
+      "current_contact": false,
+      "any_contact_in_checked_samples": false,
+      "first_contact_grid_t_s": null,
+      "first_future_contact_grid_t_s": null,
+      "minimum_center_distance_m": 9.978930029044749,
+      "minimum_center_distance_t_s": 0.0,
+      "minimum_clearance_m": 9.53171643354479,
+      "minimum_clearance_t_s": 0.0,
+      "source_sim_time_s": 0.20000000000000004,
+      "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+      "frame_id": "map",
+      "outcome": "no_contact_at_samples",
+      "reason": null,
+      "inspection_only": true,
+      "planning_allowed": false
+    },
+    {
+      "input_index": 4,
+      "candidate_id": 5,
+      "native_sampled_valid": true,
+      "native_reason": null,
+      "prediction_status": "complete",
+      "prediction_reason": null,
+      "prediction_complete": true,
+      "collision_status": "complete",
+      "collision_reason": null,
+      "collision_assessment": "no_contact_at_samples",
+      "evaluation_complete": true,
+      "checked_range_s": [
+        0.0,
+        6.0
+      ],
+      "unchecked_range_s": null,
+      "current_contact": false,
+      "any_contact_in_checked_samples": false,
+      "first_contact_grid_t_s": null,
+      "first_future_contact_grid_t_s": null,
+      "minimum_center_distance_m": 9.978930029044749,
+      "minimum_center_distance_t_s": 0.0,
+      "minimum_clearance_m": 9.53171643354479,
+      "minimum_clearance_t_s": 0.0,
+      "source_sim_time_s": 0.20000000000000004,
+      "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+      "frame_id": "map",
+      "outcome": "no_contact_at_samples",
+      "reason": null,
+      "inspection_only": true,
+      "planning_allowed": false
+    }
+  ],
+  "inspection_only": true,
+  "planning_allowed": false
+}

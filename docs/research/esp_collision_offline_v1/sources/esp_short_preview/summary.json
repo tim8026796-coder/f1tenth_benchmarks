@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "end_reason": "control_step_limit",
+  "error": null,
+  "completed_full_laps": 0,
+  "reset_count": 1,
+  "collision": false,
+  "control_steps": 2,
+  "state_count": 3,
+  "action_count": 2,
+  "plan_count": 3,
+  "sim_elapsed_s": 0.20000000000000012,
+  "wall_time_s": 6.3819434129982255,
+  "sim_seconds_per_wall_second": 0.03133841638154552,
+  "planning_wall_time_s": {
+    "total": 6.35644313901139,
+    "median": 2.1206598300050246,
+    "p95": 2.1217815675074236,
+    "max": 2.12190620500769
+  },
+  "valid_candidate_count_min": 5,
+  "valid_candidate_count_max": 5,
+  "rejected_reasons": {},
+  "max_abs_d_m": 6.12811630598279e-07,
+  "max_abs_e_psi_rad": 1.5851597057192635e-05,
+  "lap_events": [],
+  "candidate_control_enabled": false,
+  "planning_allowed": false,
+  "footprint_verified": false,
+  "continuous_verified": false,
+  "recording_complete": false
+}

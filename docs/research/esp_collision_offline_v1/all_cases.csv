@@ -1,0 +1,26 @@
+scenario,candidate_id,native_sampled_valid,native_reason,prediction_status,prediction_complete,collision_assessment,evaluation_complete,outcome,checked_range_s,unchecked_range_s,minimum_center_distance_m,minimum_clearance_m,first_future_contact_grid_t_s,reason
+"""A_far_centerline""",1,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,9.978930029044749,9.53171643354479,null,null
+"""A_far_centerline""",2,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,9.978930029044749,9.53171643354479,null,null
+"""A_far_centerline""",3,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,9.978930029044749,9.53171643354479,null,null
+"""A_far_centerline""",4,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,9.978930029044749,9.53171643354479,null,null
+"""A_far_centerline""",5,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,9.978930029044749,9.53171643354479,null,null
+"""B_stationary_inside_candidate_region""",1,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,1.1322108566314197,0.6849972611314618,null,null
+"""B_stationary_inside_candidate_region""",2,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.8770939070226096,0.4298803115226516,null,null
+"""B_stationary_inside_candidate_region""",3,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.5847293987784522,0.13751580327849422,null,null
+"""B_stationary_inside_candidate_region""",4,true,null,"""complete""",true,"""contact_detected""",true,"""contact_detected""","[0.0, 6.0]",null,0.2791162827745566,0.0,4.5,null
+"""B_stationary_inside_candidate_region""",5,true,null,"""complete""",true,"""contact_detected""",true,"""contact_detected""","[0.0, 6.0]",null,0.025334780672012898,0.0,4.5,null
+"""C_crossing_different_arrival""",1,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7836052387805077,0.3363916432805497,null,null
+"""C_crossing_different_arrival""",2,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7833886803562641,0.3361750848563061,null,null
+"""C_crossing_different_arrival""",3,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7833433286779081,0.33612973317795014,null,null
+"""C_crossing_different_arrival""",4,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7834739367747698,0.33626034127481186,null,null
+"""C_crossing_different_arrival""",5,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7837788886865451,0.3365652931865871,null,null
+"""D_incomplete_opponent""",1,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""
+"""D_incomplete_opponent""",2,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""
+"""D_incomplete_opponent""",3,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""
+"""D_incomplete_opponent""",4,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""
+"""D_incomplete_opponent""",5,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""
+"""E_saved_terminal_rejection""",1,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""
+"""E_saved_terminal_rejection""",2,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""
+"""E_saved_terminal_rejection""",3,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""
+"""E_saved_terminal_rejection""",4,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""
+"""E_saved_terminal_rejection""",5,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""
