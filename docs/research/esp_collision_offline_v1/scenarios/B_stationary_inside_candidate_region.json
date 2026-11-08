@@ -1,0 +1,40 @@
+{
+  "name": "B_stationary_inside_candidate_region",
+  "session_classification": "saved_official_ESP_simulator_lifecycle_test_short_preview",
+  "dt_s": 0.25,
+  "steps": 24,
+  "ego_body": {
+    "length_m": 0.4,
+    "width_m": 0.2,
+    "margin_m": 0.0
+  },
+  "lead_body": {
+    "length_m": 0.4,
+    "width_m": 0.2,
+    "margin_m": 0.0
+  },
+  "opponent": {
+    "path_xy": [
+      [
+        2.2929626454770524,
+        0.5997050541646936
+      ],
+      [
+        3.2929626454770524,
+        0.5997050541646936
+      ]
+    ],
+    "start_xy": [
+      2.2929626454770524,
+      0.5997050541646936
+    ],
+    "speed_mps": 0.0,
+    "frame_id": "map",
+    "geometry_id": "c53238c43d356997b7035bacb1907958cbc35d77d8f8916ec4691ca9c934de71",
+    "start_time_s": 0.20000000000000004,
+    "provenance": {
+      "kind": "assumed_reference_path",
+      "description": "Artificial stationary opponent; ESP to_cartesian(s0+2.2,d=0.6), not an ego candidate"
+    }
+  }
+}

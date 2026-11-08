@@ -1,0 +1,10 @@
+{
+  "original_directory": "/tmp/pytest-of-agent/pytest-9/test_real_timeout_records_term0/timeout",
+  "classification": "saved_timeout_test_with_deliberate_plan0_pose_mutation_do_not_use_plan0",
+  "file_sha256": {
+    "metadata.json": "1af9dd78b3882fd856dd57df68d91e738d512550292beff0d651e087dbdde005",
+    "states.jsonl": "601625b2d5ccefde2bc553ee5ed16b018a2cdcaff109ae9897ce3470b97be38b",
+    "plans.jsonl": "9333f72d25b6f1c794e217f6da85cd1a66edaf463204027bde8cd65843c8d4d1",
+    "summary.json": "48eb9d805cb23026a0f9b26db21c315746477bf38acbf0d2cce840393b9334f2"
+  }
+}

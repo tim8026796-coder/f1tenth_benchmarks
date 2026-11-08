@@ -1,0 +1,6 @@
+candidate_id,native_sampled_valid,native_reason,prediction_status,prediction_complete,collision_assessment,evaluation_complete,outcome,checked_range_s,unchecked_range_s,minimum_center_distance_m,minimum_clearance_m,first_future_contact_grid_t_s,reason
+1,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""
+2,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""
+3,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""
+4,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""
+5,true,null,"""complete""",true,"""unknown""",false,"""unknown""","[0.0, 0.0]","{""after_t_s"": 0.0, ""through_t_s"": 6.0}",10.0,9.552786404500042,null,"""incomplete_prediction_range"""

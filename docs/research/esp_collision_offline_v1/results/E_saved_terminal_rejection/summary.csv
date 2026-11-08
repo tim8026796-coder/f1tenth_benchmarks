@@ -1,0 +1,6 @@
+candidate_id,native_sampled_valid,native_reason,prediction_status,prediction_complete,collision_assessment,evaluation_complete,outcome,checked_range_s,unchecked_range_s,minimum_center_distance_m,minimum_clearance_m,first_future_contact_grid_t_s,reason
+1,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""
+2,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""
+3,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""
+4,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""
+5,false,"""invalid_source_state""","""not_evaluated""",false,"""unknown""",false,"""rejected""",null,null,null,null,null,"""plan_not_completed"""

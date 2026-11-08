@@ -1,0 +1,6 @@
+candidate_id,native_sampled_valid,native_reason,prediction_status,prediction_complete,collision_assessment,evaluation_complete,outcome,checked_range_s,unchecked_range_s,minimum_center_distance_m,minimum_clearance_m,first_future_contact_grid_t_s,reason
+1,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7836052387805077,0.3363916432805497,null,null
+2,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7833886803562641,0.3361750848563061,null,null
+3,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7833433286779081,0.33612973317795014,null,null
+4,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7834739367747698,0.33626034127481186,null,null
+5,true,null,"""complete""",true,"""no_contact_at_samples""",true,"""no_contact_at_samples""","[0.0, 6.0]",null,0.7837788886865451,0.3365652931865871,null,null

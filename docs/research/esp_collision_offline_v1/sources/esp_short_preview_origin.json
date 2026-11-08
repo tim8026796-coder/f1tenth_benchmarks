@@ -1,0 +1,10 @@
+{
+  "original_directory": "/tmp/pytest-of-agent/pytest-9/test_official_defaults_and_eve0/every_step",
+  "classification": "saved_official_ESP_simulator_lifecycle_test_short_preview",
+  "file_sha256": {
+    "metadata.json": "6a410f51315012750d8bae2dbdea3fe769293365f24da62ccd0aa2801d9826ed",
+    "states.jsonl": "e0473f5d5bca712f4eefa2e6222eb8c69f61646bbcd5f96e034b18608966cc1e",
+    "plans.jsonl": "4bf33957522864653407c389c87d9286550d0b054be99c19c26df7e41e52f495",
+    "summary.json": "35aac128d7e66aea4c1a2222e0848f59c3214f8856646889186e986efb3d528f"
+  }
+}
