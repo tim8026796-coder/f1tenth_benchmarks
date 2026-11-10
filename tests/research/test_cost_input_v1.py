@@ -25,13 +25,15 @@ def test_complete_and_no_mutation():
     assert [c['candidate_id'] for c in r['paths']]==[1,2,3,4,5]
     assert all(c['eligible_for_general_comparison'] and c['has_collision_features'] for c in r['paths'])
     assert all(c['comparison_status']=='comparable_complete' and c['exclusion_reason'] is None for c in r['paths'])
-    assert not r['plan_content_binding_verified'] and r['source_binding_level']=='metadata_join_only'
+    assert r['plan_content_binding_verified'] and r['source_binding_level']=='plan_content_sha256'
     assert (p,a,kw)==before
     json.dumps(r,allow_nan=False)
 
 
 def test_id_join_not_array_position():
-    p,a,kw=example();p['paths'].reverse();a['paths']=[a['paths'][i] for i in [2,0,4,1,3]]
+    p,opts=inputs();p['paths'].reverse();a=evaluate_plan_candidates(p,**opts)
+    kw=dict(source_state=opts['source_state'],session_metadata=opts['session_metadata'])
+    a['paths']=[a['paths'][i] for i in [2,0,4,1,3]]
     a['paths'][0]['minimum_center_distance_m']=2.5
     r=build_cost_inputs(p,a,**kw)
     assert [c['candidate_id'] for c in r['paths']]==[5,4,3,2,1]
@@ -175,7 +177,8 @@ def test_preserved_esp_summaries(case):
     plan=next(p for p in plans if p['plan_id']==1)
     state=next(s for s in states if s['control_step']==plan['source_control_step'])
     metadata=json.loads((source/'metadata.json').read_text())
-    r=build_cost_inputs(plan,adapter,source_state=state,session_metadata=metadata)
+    r=build_cost_inputs(plan,adapter,source_state=state,session_metadata=metadata,
+                        legacy_policy='allow_metadata_only')
     assert [c['candidate_id'] for c in r['paths']]==[1,2,3,4,5]
     if case.startswith('E_'):
         assert not r['source_contract_valid']

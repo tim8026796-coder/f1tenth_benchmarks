@@ -4,6 +4,7 @@ from numbers import Integral, Real
 
 from .prediction_v1 import predict_candidate
 from .collision_v1 import evaluate_collision
+from .plan_binding_v1 import build_plan_binding
 
 
 METHOD = 'offline_prediction_collision_adapter_v1'
@@ -56,6 +57,7 @@ def evaluate_plan_candidates(plan, *, source_state=None, session_metadata=None,
     paths = paths if isinstance(paths, list) else []
     batch = dict(schema_version=1, method=METHOD, batch_status='rejected', reason=None,
                  plan_id=plan.get('plan_id') if isinstance(plan, dict) else None,
+                 plan_binding=None, plan_binding_status='unavailable', source_identity_verified=False,
                  expected_candidate_count=5, received_candidate_count=len(paths),
                  source_sim_time_s=None, source_control_step=None, source_pose=None,
                  ego_speed_mps=None, geometry_id=None, frame_id=None,
@@ -89,8 +91,6 @@ def evaluate_plan_candidates(plan, *, source_state=None, session_metadata=None,
             raise ValueError('invalid_five_candidate_envelope')
         if set(ids) != {1, 2, 3, 4, 5}:
             raise ValueError('duplicate_or_unexpected_candidate_ids')
-        if plan.get('status') != 'completed':
-            raise ValueError('plan_not_completed')
         if not isinstance(source_state, dict) or not isinstance(session_metadata, dict):
             raise ValueError('missing_source_state_or_metadata')
         geometry = _identifier(plan.get('geometry_id'), 'geometry_id')
@@ -105,8 +105,6 @@ def evaluate_plan_candidates(plan, *, source_state=None, session_metadata=None,
         speed = _number(source_state.get('speed_mps'), 'ego_speed_mps')
         if speed < 0:
             raise ValueError('negative_ego_speed')
-        if source_state.get('valid') is not True:
-            raise ValueError('invalid_source_state')
         if _number(source_state.get('sim_time_s'), 'state_time') != origin:
             raise ValueError('source_state_time_mismatch')
         control_step = plan.get('source_control_step')
@@ -121,6 +119,17 @@ def evaluate_plan_candidates(plan, *, source_state=None, session_metadata=None,
         pose = [_number(v, 'source_pose') for v in pose]
         if pose != [_number(v, 'state_pose') for v in state_pose]:
             raise ValueError('source_pose_mismatch')
+        # Preserve only source identity already joined against state/metadata.
+        # Identity equality does not imply valid localization or an accepted plan.
+        batch.update(source_sim_time_s=origin, source_control_step=int(control_step),
+                     source_pose=pose, ego_speed_mps=speed, geometry_id=geometry,
+                     frame_id=frame, source_identity_verified=True)
+        batch['plan_binding'] = build_plan_binding(plan, session_metadata=session_metadata)
+        batch['plan_binding_status'] = 'recorded'
+        if plan.get('status') != 'completed':
+            raise ValueError('plan_not_completed')
+        if source_state.get('valid') is not True:
+            raise ValueError('invalid_source_state')
         dt = _number(dt_s, 'dt_s')
         if dt <= 0 or isinstance(steps, bool) or not isinstance(steps, Integral) or not 0 <= steps <= 100000:
             raise ValueError('invalid_requested_grid')

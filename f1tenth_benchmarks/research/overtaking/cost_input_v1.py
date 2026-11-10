@@ -4,6 +4,8 @@ import json
 import math
 from numbers import Integral, Real
 
+from .plan_binding_v1 import verify_plan_binding
+
 METHOD = 'five_candidate_cost_input_v1'
 OUTCOMES = {'no_contact_at_samples', 'contact_detected', 'unknown', 'rejected', 'reference_only'}
 METRICS = ('minimum_center_distance_m', 'minimum_center_distance_t_s',
@@ -120,11 +122,14 @@ def _row_checks(row, horizon):
         raise ValueError('clearance_exceeds_center_distance')
 
 
-def build_cost_inputs(plan, adapter_result, *, source_state=None, session_metadata=None):
+def build_cost_inputs(plan, adapter_result, *, source_state=None, session_metadata=None,
+                      legacy_policy='require_binding'):
     """Join by candidate ID, preserve plan order, and classify available features.
 
-    No Prediction/Collision call or geometry recomputation. Metadata matching is
-    not cryptographic proof that Adapter used the same candidate point content.
+    No Prediction/Collision call or geometry recomputation. Binding is content
+    equality, not authentication. Legacy reads require explicit
+    legacy_policy="allow_metadata_only" for metadata-only comparison; the
+    default "require_binding" returns rejected cost inputs for unbound data.
     Session metadata is required to independently establish geometry/frame;
     source_state, when provided, must be the same snapshot. Missing values stay
     null. Invalid batches retain actual plan slots and report contract errors.
@@ -133,6 +138,8 @@ def build_cost_inputs(plan, adapter_result, *, source_state=None, session_metada
     candidates = candidates if isinstance(candidates, list) else []
     batch = dict(schema_version=1, method=METHOD, contract_valid=False, source_contract_valid=False, contract_errors=[],
         source_binding_level='metadata_join_only', plan_content_binding_verified=False,
+        binding_status='legacy_unbound' if isinstance(adapter_result, dict) and 'plan_binding' not in adapter_result else 'unverified',
+        binding_trust_policy=legacy_policy, plan_binding=None,
         source={}, artifact_fingerprints=dict(plan=_fingerprint(plan), adapter=_fingerprint(adapter_result)),
         paths=[], inspection_only=True, planning_allowed=False,
         limitations=['No cost weights, score, ranking, selection or control.',
@@ -154,6 +161,8 @@ def build_cost_inputs(plan, adapter_result, *, source_state=None, session_metada
     try:
         if not isinstance(plan, dict) or not isinstance(adapter_result, dict):
             raise ValueError('invalid_plan_or_adapter')
+        if legacy_policy not in ('require_binding', 'allow_metadata_only'):
+            raise ValueError('invalid_legacy_policy')
         _slots(candidates, 'plan')
         paired = _slots(adapter_result.get('paths'), 'adapter')
         if not _id(plan.get('plan_id')) or not _id(adapter_result.get('plan_id')) or adapter_result.get('plan_id') != plan['plan_id']:
@@ -165,6 +174,15 @@ def build_cost_inputs(plan, adapter_result, *, source_state=None, session_metada
             raise ValueError('missing_source_geometry_or_frame')
         if plan.get('geometry_id') != geometry or plan.get('frame_id', frame) != frame:
             raise ValueError('plan_metadata_mismatch')
+        if 'plan_binding' in adapter_result:
+            try:
+                batch['plan_binding'] = verify_plan_binding(
+                    plan, adapter_result['plan_binding'], session_metadata=session_metadata)
+            except ValueError:
+                batch['binding_status'] = 'invalid_binding'
+                raise
+            batch.update(binding_status='verified', source_binding_level='plan_content_sha256',
+                         plan_content_binding_verified=True)
         origin = _number(plan.get('source_sim_time_s'), 'source_time')
         step = plan.get('source_control_step')
         if not _id(step) or step < 0:
@@ -200,6 +218,8 @@ def build_cost_inputs(plan, adapter_result, *, source_state=None, session_metada
                     raise ValueError('state_source_mismatch:' + key)
             if source_state.get('speed_mps') != adapter_result.get('ego_speed_mps'):
                 raise ValueError('state_speed_mismatch')
+        if batch['binding_status'] == 'legacy_unbound' and legacy_policy == 'require_binding':
+            raise ValueError('legacy_plan_binding_required')
         speed = _number(adapter_result.get('ego_speed_mps'), 'ego_speed')
         dt = _number(adapter_result.get('dt_s'), 'dt_s'); steps = adapter_result.get('steps')
         if speed < 0 or dt <= 0 or not _id(steps) or not 0 <= steps <= 100000:
